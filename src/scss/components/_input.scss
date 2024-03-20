@@ -1,0 +1,112 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    
+    &__input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 1px solid #828282;
+        border-radius: 7px;
+        
+        .input {
+            width: 100%;
+            font-size: 1rem;
+            padding: 5px;
+        }
+        
+        &.sm {
+            padding: 5px;
+        }
+        
+        &.md {
+            padding: 10px;
+        }
+        
+        &.error {
+            border: 1px solid #D32F2F;
+            &.hover, &:hover {
+                border: 1px solid #333;
+            }
+            &:not(&:hover) {
+                border: 1px solid #D32F2F;                
+            }            
+        }
+        
+        &.hover, &:hover {
+            border: 1px solid #333;
+        }
+        
+        .startIcon {
+            display: flex;
+            align-items: center;
+            padding-right: 5px;
+            color: #828282;
+        }
+
+        .endIcon {
+            display: flex;
+            align-items: center;
+            padding-left: 5px;
+            color: #828282;
+        }
+    }
+
+    label {
+        font-size: 0.85rem;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    
+    p {
+        font-size: 0.7rem;
+        color: #828282;
+        margin-top: 5px;
+    }
+
+    &.focus, &:focus {
+        label {
+            color: #2962FF;
+        }
+        .container__input {
+            border: 1px solid #2962FF;
+        }
+    }
+    
+    &.error {
+        label, p {
+            color: #D32F2F;
+        }
+        .container__input {
+            border-color: #D32F2F;
+        }
+    }
+    
+    &.hover {
+        label {
+            color: #333;
+        }
+        .container__input {
+            border: 1px solid #333;
+        }
+    }
+
+    &.fullWidth {
+        width: 100%;
+    }
+
+    &.disabled {
+        .container__input {
+            border: none !important;        
+        }
+        label {
+            color: #333;
+        }
+
+        p {
+            color: #828282;
+        }
+    }
+}
